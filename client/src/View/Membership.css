@@ -1,0 +1,94 @@
+.member_title {
+    text-align: center;
+    font-family: 'Aggravo',sans-serif;
+    font-size: 15;
+    letter-spacing: 2.5px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.member_info {
+    box-sizing: border-box;
+    margin: 0 auto 50px;
+    width: 500px;
+}
+
+.member_item_id {
+    border: none;
+    outline: none;
+    width: 500px;
+    margin-bottom: 3px;
+    font-size: 16px;
+}
+
+.member_item {
+    border: none;
+    outline: none;
+    width: 600px;
+    margin-bottom: 3px;
+    font-size: 16px;
+}
+
+.member_wrap {
+    width: 600px;
+    border-bottom: 1px solid black;
+    align-items: center;
+    margin: auto;
+}
+
+.member_wrap:hover {
+    border-bottom: 1px solid #6155F5;
+}
+
+.member_input {
+    margin-bottom: 50px;
+}
+
+.member_msg {
+    font-size: 14px;
+}
+
+.member_msg_error {
+    color: red;
+}
+
+.success {
+    color: blue;
+}
+
+
+.overlap {
+    border: none;
+    width: 90px;
+    height: 25px;
+    position: relative;
+    background-color: #6155F5;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    bottom: 3px;
+}
+
+.member_btn_area {
+    text-align: center;
+}
+
+.member_btn {
+    border: none;
+    width: 230px;
+    height: 50px;
+    background-color: #6155F5;
+    color: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.overlap:hover, .member_btn:hover {
+    background-color: #2613fa;
+}
+
+.member_btn:disabled {
+    background-color:#ccc;
+    cursor: not-allowed;
+}
