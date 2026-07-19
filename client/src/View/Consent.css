@@ -1,0 +1,103 @@
+/* .Consent {
+    background-color: antiquewhite;
+    width: 600px;
+    margin: auto;
+} */
+
+.consent_title {
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Aggravo',sans-serif;
+    margin-bottom: 40px;
+    letter-spacing: .9px;
+}
+
+.all_choice {
+    margin: auto;
+    width: 350px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #e3e3e3db;
+    letter-spacing: .9px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.all_choice label {
+    display: flex;
+    cursor: pointer;
+}
+
+.full_choice {
+    transform: scale(1.7);
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+.all_choice p {
+    padding-left: 15px;
+}
+
+.all_choice span {
+    font-size: 12px;
+    color: blue;
+    padding-left: 10px;
+}
+
+.consent_item {
+    margin: auto;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    font-size: 15px;
+    font-weight: 500;
+    padding-left: 25px;
+    
+}
+
+.consent_item label {
+    display: flex;
+    cursor: pointer;
+}
+
+.consent_item input {
+    transform: scale(1.5);
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.consent_item p {
+    padding-left: 13px;
+}
+
+.tos_btn {
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: #fff;
+}
+
+.consent_btn {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.next_btn {
+    border: none;
+    cursor: pointer;
+    background-color: #6155F5;
+    color: #fff;
+    width: 250px;
+    height: 50px;
+    border-radius: 8px;
+    font-size: 16px;
+    letter-spacing: 3px;
+}
+
+.next_btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
