@@ -18,8 +18,9 @@ public class UserDTO {
     private String userName;
     private String userPhone;
     private String nickName;
+    private String accessToken;
+    private String refreshToken;
 //    private String profile;
-//    private String loginToken;
 //    private String socialId;
 //    private String userType;
 }
