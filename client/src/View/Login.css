@@ -1,0 +1,91 @@
+.login_logo img {
+    display: block;
+    width: 200px;
+    margin: auto;
+}
+
+.login_box {
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    width: 500px;
+    margin: 0 auto;
+    height: 400px;
+}
+
+.login_input {
+    width: 340px;
+    margin: 0 auto;
+}
+
+.login_item {
+    display: flex;
+    width: 300px;
+    height: 32px;
+    margin-bottom: 10px;
+    padding: 0 22px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #191919;
+    font-size: 17px;
+}
+
+.login_item:hover {
+    border-bottom: 1px solid #6155F5;
+}
+
+.login_item:focus {
+    border-bottom: 1px solid #6155F5;
+}
+
+
+.login_icon {
+    display: flex;
+    position: relative;
+    top: 40px;
+    font-size: 17px;
+}
+
+.login_btn_area {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.login_btn {
+    border: none;
+    cursor: pointer;
+    width: 350px;
+    height: 45px;
+    border-radius: 8px;
+    background-color: #6155F5;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 0.8px;
+}
+
+.login_btn:hover {
+    background-color: #2613fa;
+}
+
+.login_for {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.find_text {
+    text-decoration: none;
+    color: #191919;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+}
+
+.find_text_purple {
+    color: #6155F5;
+}
+.stick {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0 5px;
+    color: #ccc;
+}

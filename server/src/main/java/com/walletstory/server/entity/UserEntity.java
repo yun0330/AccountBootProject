@@ -38,15 +38,15 @@ public class UserEntity {
     @Column(name = "enroll_date", nullable = false)
     private LocalDateTime enrollDate;
 
+    @Column(name = "login_token",length = 1000)
+    private String loginToken;
+
 //    @Column(name = "profile")
 //    private String profile;
-//
-//    @Column(name = "login_token")
-//    private String loginToken;
-//
+
 //    @Column(name = "social_id")
 //    private String socialId;
-//
+
 //    @Column(name = "user_type")
 //    private String userType;
 }

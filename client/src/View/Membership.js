@@ -39,7 +39,7 @@ const Membership = () => {
                 alert("회원가입이 완료되었습니다.")
             }
         } catch (error) {
-            console.error("서버 응답 오류:", error.request?.data || error.message);
+            console.error("서버 응답 오류:", error.response?.data || error.message);
         }
     };
 

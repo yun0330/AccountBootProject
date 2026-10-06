@@ -2,29 +2,26 @@ package com.walletstory.server.controller;
 
 import com.walletstory.server.dto.UserDTO;
 import com.walletstory.server.entity.UserEntity;
+import com.walletstory.server.security.TokenProvision;
 import com.walletstory.server.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-
 import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/member")
+@RequiredArgsConstructor
 public class UserController {
 
-    @Autowired
-    private UserService userService;
-
-    private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    private final UserService userService;
+    private final TokenProvision tokenProvision;
 
     @PostMapping("/createuser")
     public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO) {
         UserEntity user = UserEntity.builder()
                 .userId(userDTO.getUserId())
-                .userPw(passwordEncoder.encode(userDTO.getUserPw()))
+                .userPw(userDTO.getUserPw())
                 .userEmail(userDTO.getUserEmail())
                 .userName(userDTO.getUserName())
                 .userPhone(userDTO.getUserPhone())
@@ -45,5 +42,32 @@ public class UserController {
     public ResponseEntity<Boolean> checkUserId(@RequestParam("userId")String userId) {
         boolean existsUser = userService.existsByUserId(userId);
         return ResponseEntity.ok(existsUser);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<UserDTO> loginUser(@RequestBody UserDTO userDTO) {
+        UserEntity user = userService.getByCredentials(
+                userDTO.getUserId(),
+                userDTO.getUserPw()
+        );
+
+        String accessToken = tokenProvision.createAccessToken(user);
+        String refreshToken = tokenProvision.createRefreshToken(user);
+
+        user.setLoginToken(refreshToken);
+        userService.updateUser(user);
+
+        final UserDTO responseUserDTO = UserDTO.builder()
+                .userId(user.getUserId())
+                .accessToken(accessToken)
+                .refreshToken(refreshToken)
+                .build();
+        return ResponseEntity.ok(responseUserDTO);
+    }
+
+    @PostMapping("/refresh")
+    public ResponseEntity<UserDTO> refresh(@RequestBody UserDTO userDTO) {
+        UserDTO responseUserDTO = userService.refreshToken(userDTO.getRefreshToken());
+        return ResponseEntity.ok(responseUserDTO);
     }
 }
